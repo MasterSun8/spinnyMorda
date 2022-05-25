@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="myCanvas" width="1000" height="500"></canvas>
+<script>
+const canvas = document.getElementById("myCanvas")
+const ctx = canvas.getContext("2d")
+
+ctx.beginPath()
+
+ctx.moveTo(50, 50)
+ctx.lineTo(50, 300)
+ctx.moveTo(50, 150)
+ctx.lineTo(200, 300)
+ctx.moveTo(50, 150)
+ctx.lineTo(200, 50)
+
+ctx.moveTo(300, 50)
+ctx.lineTo(300, 300)
+
+ctx.moveTo(300, 50)
+ctx.arc(300, 175, 125, -0.5*Math.PI, -1.5*Math.PI)
+
+
+ctx.moveTo(625, 250)
+ctx.arc(575, 250, 50, 0, 2*Math.PI)
+ctx.arc(650, 100, 50, 160, 0)
+ctx.arc(725, 250, 50, 1*Math.PI, 0*Math.PI, true)
+
+ctx.font = '25px serif';
+ctx.fillText('Leo', 625, 100);
+
+ctx.stroke()
+</script> 
+
+</body>
+</html>
