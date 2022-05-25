@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<script>
+
+function drawCircle(x, y, r, start = 0, end = 2){
+    ctx.moveTo(x+r, y)
+    ctx.arc(x, y, r, start, end * Math.PI)
+}
+
+const canvas = document.getElementById("myCanvas")
+const ctx = canvas.getContext("2d")
+
+function morda(){
+    ctx.beginPath()
+    drawCircle(150, 150, 150)
+
+    drawCircle(200, 100, 20)
+    drawCircle(200, 100, 5)
+    drawCircle(100, 100, 20)
+    drawCircle(100, 100, 5)
+    
+    drawCircle(150, 150, 50, 0, 1)
+
+    ctx.stroke()
+}
+
+
+function rotate(){
+    ctx.translate(150,150)
+    ctx.rotate(1*Math.PI/180)
+    ctx.translate(-150,-150)
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    morda()
+}
+
+setInterval(rotate, 10)
+</script> 
+
+</body>
+</html>
